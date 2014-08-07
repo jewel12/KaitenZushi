@@ -1,0 +1,9 @@
+{
+  "name": "kaitenzushi",
+  "version": "0.0.1",
+  "description": "kaitenzushi",
+  "dependencies": {
+    "express": "^4.7.4",
+    "socket.io": "^1.0.6"
+  }
+}

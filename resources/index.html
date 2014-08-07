@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>KAITENZUSHI - Broadcast your sushi.</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.0.6.js"></script>
+    <script src="https://rawgit.com/flatiron/director/master/build/director.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/0.10.5/vue.min.js"></script>
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha256.js"></script>
+    <script src="base64.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="main">
+      <div id="header">
+        <div id="title">
+          KAITENZUSHI
+        </div>
+        <div id="header_right">
+          <input type="text" id="sushi" placeholder="INPUT YOUR SUSHI">
+        </div>
+        <div id="clear">
+        </div>
+      </div>
+      <div id="kaitenzushi" v-on="click: onClick">
+        <div id="neta">{{ neta }}</div>
+        <div>Broadcast your sushi.</div>
+      </div>
+      <div id="activities">
+        <div v-repeat="item: items" class="type-{{item.type}}}">
+          {{ item.type }} ({{ item.time }})
+        </div>
+      </div>
+      <div id="enable_notification">ENABLE WEB NOTIFICATION</div>
+      <div id="about">ABOUT</div>
+    </div>
+  </body>
+</html>
