@@ -38,6 +38,7 @@ html, body {
     background-color: #78a937;
     padding-top: 10px;
     padding-bottom: 10px;
+    cursor: pointer;
 }
 #enable_notification {
     background-color: #f1b71d;
