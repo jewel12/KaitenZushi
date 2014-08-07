@@ -60,7 +60,9 @@ html, body {
     background-color: #22454d;
     height: 40px;
 }
-#title {
+#title a {
+    color: #ffffff;
+    text-decoration: none;
     text-align: left;
     padding: 10px;
     height: 40px;

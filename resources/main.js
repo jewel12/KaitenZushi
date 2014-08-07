@@ -76,6 +76,14 @@ $(function() {
         sushi.$data.neta = decoded;
     }
 
+    function routeToNeta(neta) {
+        var encoded = Base64.encodeURI(neta);
+        var url =
+            location.protocol + '//' + 
+            location.host + '/#/sushi/' + encoded;
+        location.href = url;
+    }
+    
     // Routing
     var routes = {
         '/sushi/:neta': startKaitenZushi
@@ -88,11 +96,7 @@ $(function() {
     // Initialize App
     $('input#sushi').on('keydown', function(e) {
         if (e.keyCode == 13) {
-            var encoded = Base64.encodeURI($('input#sushi').val());
-            var url =
-                location.protocol + '//' + 
-                location.host + '/#/sushi/' + encoded;
-            location.href = url;
+            routeToNeta($('input#sushi').val());
         }
     });
     
@@ -104,4 +108,7 @@ $(function() {
             Notification.requestPermission();
         });
     }
+    $('#about').on('click', function(e) {
+        routeToNeta('右上からコンテキストを作って、同じコンテキストにいる人にネタ（コンテキスト）を振る舞おう！(作った人: @jewel_x12)');
+    });
 });
