@@ -17,4 +17,5 @@ io.on('connection', function (socket) {
     });
 });
 
-server.listen(8000);
+var port =  process.env.PORT || 80;
+server.listen(port);
